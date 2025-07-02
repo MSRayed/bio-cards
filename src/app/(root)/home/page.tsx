@@ -1,15 +1,20 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const HomePage = () => {
-  const { isLoaded, isSignedIn, userId, sessionId, getToken } = useAuth();
+  const { isSignedIn, user, isLoaded } = useUser();
+  const router = useRouter();
 
-  return (
-    <main>
-      Hello, {userId}! Your current active session is {sessionId}.
-    </main>
-  );
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      router.push("/");
+    }
+  }, [isLoaded, isSignedIn]);
+
+  return <main>Hello</main>;
 };
 
 export default HomePage;
