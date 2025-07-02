@@ -21,7 +21,7 @@ export default function LandingPage() {
       <h1 className="text-6xl font-extrabold text-primary">Bio Cards</h1>
       <p className="text-xl">Generate cards from biology terms</p>
 
-      <Link href="/home">
+      <Link href="/sign-in">
         <Button className="text-lg mt-8">Get started</Button>
       </Link>
     </main>
