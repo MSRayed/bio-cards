@@ -1,7 +1,13 @@
+"use client";
+
+import { useAuth } from "@clerk/nextjs";
+
 const HomePage = () => {
+  const { isLoaded, isSignedIn, userId, sessionId, getToken } = useAuth();
+
   return (
     <main>
-      <p>Home Page</p>
+      Hello, {userId}! Your current active session is {sessionId}.
     </main>
   );
 };
