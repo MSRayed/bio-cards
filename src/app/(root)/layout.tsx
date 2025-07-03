@@ -1,3 +1,4 @@
+import MaxWidthWrapper from "@/components/max-width-wrapper";
 import Navbar from "@/components/navbar";
 
 const RootLayout = ({
@@ -8,7 +9,7 @@ const RootLayout = ({
   return (
     <main>
       <Navbar />
-      {children}
+      <MaxWidthWrapper>{children}</MaxWidthWrapper>
     </main>
   );
 };
